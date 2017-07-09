@@ -1,0 +1,11 @@
+<h2>{{pregunta.enunciado}} --{{pregunta.id}} </h2>
+
+<ul>
+  <li *ngFor ="let respuesta of respuestas">
+    {{respuesta.texto}}
+  </li>
+
+</ul>
+
+<button *ngIf="pregunta.id>1" (click)="encuentraPregunta(pregunta.id-1)">Atras</button>
+<button *ngIf="pregunta.id!=longitudMaxima"  (click)="encuentraPregunta(pregunta.id+1)">Adelante</button>
